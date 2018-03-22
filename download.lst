@@ -1,0 +1,3 @@
+http://nginx.org/download/nginx-1.13.10.tar.gz
+https://github.com/simplresty/ngx_devel_kit/archive/v0.3.0.tar.gz
+https://github.com/openresty/lua-nginx-module/archive/v0.10.11.tar.gz
