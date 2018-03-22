@@ -14,7 +14,6 @@ node {
                 tar xf LuaJIT-2.0.5.tar.gz
                 rm LuaJIT-2.0.5.tar.gz
                 cd $home/LuaJIT-2.0.5 && sudo make && sudo mkdir -p /usr/local/include && sudo mkdir -p /usr/local/share/luajit-2.0.5 && sudo checkinstall -D -y --install=yes
-                cp $home/LuaJIT-2.0.5/luajit_2.0.5-1_amd64.deb $home
                 cd $home/
             fi
             wget https://raw.githubusercontent.com/vadmiralov87/task/master/download.lst
