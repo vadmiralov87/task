@@ -15,7 +15,7 @@ node {
                 rm LuaJIT-2.0.5.tar.gz
                 cd $home/LuaJIT-2.0.5 && sudo make && sudo mkdir /usr/local/include && sudo mkdir /usr/local/share/luajit-2.0.5 && sudo checkinstall -D -y --install=yes
                 cp $home/LuaJIT-2.0.5/luajit_2.0.5-1_amd64.deb $home
-                cd $home
+                cd $home/
             fi
             wget https://raw.githubusercontent.com/vadmiralov87/task/master/download.lst
             echo "download source code of nginx and additional modules (like lua-nginx-module)"
@@ -34,13 +34,14 @@ node {
             
             echo "build nginx with lua-nginx-module"
             cd $home/nginx-1.13.10 && sudo ./configure --prefix=/opt/nginx --with-ld-opt="-Wl,-rpath,/usr/local/lib" --add-module=$home/ngx_devel_kit-0.3.0/ --add-module=$home/lua-nginx-module-0.10.11/ && sudo make -j2 && sudo checkinstall -D -y --install=no
-            cp $home/nginx-1.13.10/nginx_1.13.10-1_amd64.deb $home
+            cp $home/nginx-1.13.10/nginx_1.13.10-1_amd64.deb $home/
             cd $home
         '''
     }
 
     stage('Dockerize') {
         sh '''
+            wget 
             sudo docker build . -t nginx:latest
             sudo docker tag nginx vadmiralov87/nginx
             sudo docker login -u $username -p $password
