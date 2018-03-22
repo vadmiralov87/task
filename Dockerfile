@@ -7,7 +7,8 @@ RUN apt-get update; \
 COPY  nginx_1.13.10-1_amd64.deb /usr/src
 COPY  luajit_2.0.5-1_amd64.deb /usr/src
 
-RUN dpkg -i /usr/src/nginx_1.13.10-1_amd64.deb; \
+RUN dpkg -i /usr/src/luajit_2.0.5-1_amd64.deb; \
+	dpkg -i /usr/src/nginx_1.13.10-1_amd64.deb; \
     mkdir -p /opt/nginx/logs; \
     mkdir -p /opt/nginx/html
 
