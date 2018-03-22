@@ -34,7 +34,7 @@ node {
             
             echo "build nginx with lua-nginx-module"
             cd $home/nginx-1.13.10 && sudo ./configure --prefix=/opt/nginx --with-ld-opt="-Wl,-rpath,/usr/local/lib" --add-module=$home/ngx_devel_kit-0.3.0/ --add-module=$home/lua-nginx-module-0.10.11/ && sudo make -j2 && sudo checkinstall -D -y --install=no
-            #cp $home/nginx-1.13.10/nginx_1.13.10-1_amd64.deb $home/
+            cp $home/nginx-1.13.10/nginx_1.13.10-1_amd64.deb $home/
             cd $home
         '''
     }
