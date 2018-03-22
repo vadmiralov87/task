@@ -51,8 +51,7 @@ node {
             wget https://raw.githubusercontent.com/vadmiralov87/task/master/Dockerfile
             wget https://raw.githubusercontent.com/vadmiralov87/task/master/nginx.conf
             wget https://raw.githubusercontent.com/vadmiralov87/task/master/index.html
-            sudo docker build . -t nginx:latest
-            sudo docker tag nginx vadmiralov87/nginx
+            sudo docker build . -t vadmiralov87/nginx
             sudo docker login -u $username -p $password
             sudo docker push vadmiralov87/nginx
         '''
