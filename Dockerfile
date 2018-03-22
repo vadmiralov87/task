@@ -5,6 +5,7 @@ RUN apt-get update; \
     apt-get install htop mc -y
 
 COPY  nginx_1.13.10-1_amd64.deb /usr/src
+COPY  luajit_2.0.5-1_amd64.deb /usr/src
 
 RUN dpkg -i /usr/src/nginx_1.13.10-1_amd64.deb; \
     mkdir -p /opt/nginx/logs; \

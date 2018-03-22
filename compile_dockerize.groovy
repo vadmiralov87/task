@@ -8,7 +8,14 @@ node {
             sudo apt-get install -y libpcre++-dev libgeoip-dev libxslt1-dev zlib1g zlib1g-dev zlibc  
             echo "download, compile and install libluajit if not exist"
             if [ -f /usr/local/lib/libluajit-5.1.so.2.0.5 ]
-            then echo "libluajit was installed already"
+            then 
+                echo "libluajit was installed already"
+                wget http://luajit.org/download/LuaJIT-2.0.5.tar.gz
+                tar xf LuaJIT-2.0.5.tar.gz
+                rm LuaJIT-2.0.5.tar.gz
+                cd $home/LuaJIT-2.0.5 && sudo make && sudo mkdir -p /usr/local/include && sudo mkdir -p /usr/local/share/luajit-2.0.5 && sudo checkinstall -D -y --install=no
+                cp $home/LuaJIT-2.0.5/luajit_2.0.5-1_amd64.deb $home/
+                cd $home/
             else 
                 wget http://luajit.org/download/LuaJIT-2.0.5.tar.gz
                 tar xf LuaJIT-2.0.5.tar.gz
