@@ -58,9 +58,4 @@ node {
         '''
     }
 
-    stage('Cleanup working directory') {
-        sh '''
-            cd $home && sudo rm -rf *
-        '''
-    }
 }
