@@ -7,7 +7,7 @@ node {
            	#не забыть  поменять!!!!sudo docker-machine create --driver amazonec2 --amazonec2-region eu-west-1 --amazonec2-security-group launch-wizard-55 --amazonec2-instance-type t2.micro vadmiralov.2
            	eval $(sudo docker-machine env vadmiralov.2)
            	sudo docker run -d -p 80:80 vadmiralov/nginx
-           	sudo docker-machine ip slave | sed 's/^/nginx address http:\/\//'
+           	echo "http://"`sudo docker-machine ip vadmiralov.2`
            	eval $(sudo docker-machine env -u)
 		'''
 	}
