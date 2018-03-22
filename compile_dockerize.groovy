@@ -57,4 +57,10 @@ node {
             sudo docker push vadmiralov87/nginx
         '''
     }
+
+    stage('Cleanup working directory') {
+        sh '''
+            cd $home && sudo rm -rf *
+        '''
+    }
 }
